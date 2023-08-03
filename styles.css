@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+.container {
+    display: flex;
+    width: 100px;
+}
+
+/* TRANSITIONS */
+.animarButton {
+    width: 100%;
+    background-color: blue;
+    margin-right: 0px;
+    color: white;
+    /* transition: margin-right 4s, color 2s, background-color 1s; */
+    transition: all 2s;
+}
+
+.animarButton:hover {
+    margin-right: 20px;
+    background-color: green;
+    color: black;
+}
+
+ul {
+    padding: 20px;
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+li {
+    transition: all 4s;
+}
+
+li:hover {
+    transform: scale(1.2);
+}
+
+
+.spiderman {
+    background-color: red;
+    width: 400px;
+    height: 150px;
+    margin-left: 50px;
+    overflow: hidden;
+}
+
+.spiderman:hover .bajar {
+    animation: bajando 300ms linear forwards;
+}
+
+/* animation */
+
+.bajar {
+    display: flex;
+    font-size: 2rem;
+    color: black;
+    padding-left: 50px;
+    padding-top: 20px;
+    opacity: 0;
+}
+
+
+
+/* cree la animation */
+@keyframes bajando {
+    0% {
+        transform: translateY(-200%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes izquierda {
+    0% {
+        transform: translateX(-200%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+.spinner {
+    border: 4px solid rgba(0,0,0,0.1);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border-left-color: green;
+    animation: spin 1s linear infinite;
+}
+
+img {
+    width: 300px;
+    /* animation: spin 1s linear infinite; */
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.mover-button {
+    margin: 10px;
+    padding: 10px;
+}
+
+.mover-button:hover {
+    animation: vibrar 2s linear infinite;
+}
+
+@keyframes vibrar {
+    0%, 7% {
+        transform: rotate(0deg);
+    }
+    15% {
+        transform: rotate(-15deg);
+    }
+    20% {
+        transform: rotate(10deg);
+    }
+    25% {
+        transform: rotate(-10deg);
+    }
+    30% {
+        transform: rotate(6deg);
+    }
+    35% {
+        transform: rotate(-4deg);
+    }
+    40%,100% {
+        transform: rotate(0deg);
+    }
+}
